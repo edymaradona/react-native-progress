@@ -76,12 +76,14 @@ export default class CircleSnail extends Component {
         duration: this.props.duration || 1000,
         isInteraction: false,
         easing: Easing.inOut(Easing.quad),
+        useNativeDriver: true
       }),
       Animated.timing(this.state.endAngle, {
         toValue: -MAX_ARC_ANGLE * iteration,
         duration: this.props.duration || 1000,
         isInteraction: false,
         easing: Easing.inOut(Easing.quad),
+        useNativeDriver: true
       }),
     ]).start(endState => {
       if (endState.finished) {
@@ -101,6 +103,7 @@ export default class CircleSnail extends Component {
       duration: this.props.spinDuration || 5000,
       easing: Easing.linear,
       isInteraction: false,
+      useNativeDriver: true
     }).start(endState => {
       if (endState.finished) {
         this.state.rotation.setValue(0);
